@@ -6,10 +6,11 @@ pipeline {
     }
     stages {
         stage('Clonar') {
-            steps {
-                git 'https://github.com/patriciodunstan/saludoapp.git'
-            }
+          steps {
+            git branch: 'main', url: 'https://github.com/patriciodunstan/saludoapp.git'
+          }
         }
+
         stage('Compilar') {
             steps {
                 sh 'mvn clean compile'
